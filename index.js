@@ -118,8 +118,24 @@ document.addEventListener('keyup', control);
 
 function pacDotEaten() {
     if (squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
-        squares[pacmanCurrentIndex].classList.remove('pac-dot')
-        score++
+        squares[pacmanCurrentIndex].classList.remove('pac-dot');
+        score++;
         scoreDisplay.innerHTML = score;
     }
 }
+
+
+class Ghost {
+    constructor(className, startIndex, speed) {
+        this.classname = classname;
+        this.startIndex = startIndex;
+        this.speed = speed;
+    }
+}
+
+ghosts = [
+    new Ghost('blinky', 348, 250),
+    new Ghost('pinky', 376, 400),
+    new Ghost('inky', 351, 300),
+    new Ghost('clyde', 379, 500)
+]
