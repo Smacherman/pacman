@@ -53,4 +53,7 @@ function createBoard() {
 
 createBoard()
 
-console.log(squares.length)
+// starting position of PacMan
+let pacmanCurrentIndex = 500;
+
+squares[pacmanCurrentIndex].classList.add('pacman')
