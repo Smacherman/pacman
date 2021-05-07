@@ -3,7 +3,7 @@ const grid = document.querySelector('.grid');
 const scoreDisplay = document.getElementById('score');
 let squares = [];
 
-const layout - [
+const layout = [
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
     1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,
     1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,
@@ -42,3 +42,7 @@ function createBoard() {
 
     }
 }
+
+createBoard()
+
+console.log(squares.length)
