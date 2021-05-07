@@ -54,6 +54,51 @@ function createBoard() {
 createBoard()
 
 // starting position of PacMan
-let pacmanCurrentIndex = 500;
-
+let pacmanCurrentIndex = 490;
 squares[pacmanCurrentIndex].classList.add('pacman')
+
+function control(e) {
+    squares[pacmanCurrentIndex].classList.remove('pacman')
+
+    switch(e.keyCode) {
+        case 40:
+        console.log('Down Key Pressed')
+        if (
+            !squares[pacmanCurrentIndex + width].classList.contains('wall') &&
+            pacmanCurrentIndex + width < width * width
+            ) 
+            pacmanCurrentIndex += width
+        break
+
+        case 39:
+        console.log('Right Key Pressed')
+        if(
+            !squares[pacmanCurrentIndex +1].classList.contains('wall') &&
+            pacmanCurrentIndex % width < width -1
+            ) 
+            pacmanCurrentIndex +=1
+        break
+
+        case 38:
+        console.log('Up Key Pressed')
+        if (
+            !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
+            pacmanCurrentIndex - width >=0
+            ) 
+            pacmanCurrentIndex -= width
+        break
+
+        case 37:
+        console.log('Left Key Pressed')
+        if( 
+            !squares[pacmanCurrentIndex -1].classList.contains('wall') &&
+            pacmanCurrentIndex % width !==0
+            ) 
+            pacmanCurrentIndex -=1
+        break 
+
+    }
+    squares[pacmanCurrentIndex].classList.add('pacman')
+
+}
+document.addEventListener('keyup', control);
