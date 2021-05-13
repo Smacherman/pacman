@@ -124,6 +124,18 @@ function pacDotEaten() {
     }
 }
 
+function powerPelletEaten() {
+    if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+    score +=10
+    ghosts.forEach(ghost => ghost.isScared = true)   
+    setTimeout(unScareGhosts, 10000)   
+    }
+}
+
+function unScareGhosts() {
+    ghosts.forEach(ghost => ghost.isScared = false)
+}
+
 
 class Ghost {
     constructor(className, startIndex, speed) {
