@@ -130,6 +130,9 @@ class Ghost {
         this.classname = classname;
         this.startIndex = startIndex;
         this.speed = speed;
+        this.currentIndex = startIndex;
+        this.isScared = false;
+        this.timerId = NaN;
     }
 }
 
